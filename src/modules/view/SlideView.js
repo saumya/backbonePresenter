@@ -9,41 +9,26 @@ function(){
 	
 	var SlideView = Backbone.View.extend({
 		el: $('#idSlides'),
+		events:{
+			'click' : 'onClick'
+		},
 		initialize: function(){
 			console.log('SlideView : initialize : ');
-			//this.model.on('change', this.onModelChange);
-			//console.log(this.el);
-			//this.render();
 		},
 		render: function(){
 			console.log('SlideView : render : ');
-			//this.$el.clear();
-			//this.$el.append(' : Hello World');
-			//console.log(this.model.get('pageTitle'));
-			//console.log(this.model.toJSON());
-			/* NOT NEEDED
-			var t=this.model.get('pageTitle');
-			var d=this.model.get('description');
-			var s=this.model.get('subTitle');
-			//
-			var o=new Object();//NOt sure why I have to do this!!
-			o.pageTitle=t;
-			o.description=d;
-			o.subTitle=s;
-			//
-            //var compiledTemplate = _.template( templateString , o );
-            */
             var compiledTemplate = _.template( templateString , this.model.toJSON() );
             // Load the compiled HTML into the Backbone "el"
             this.$el.html( compiledTemplate );
 		},
 		setData: function(data){
 			console.log('SlideView : setData : ');
-			//console.log(this.model);
 			this.model=data;
-			//console.log(this.model);
 			this.render();
-			//console.log(this.model);
+		},
+		//Event handlers
+		onClick: function(event){
+			console.log('SlideView : onClick : ');
 		}
 	});
 	return SlideView;

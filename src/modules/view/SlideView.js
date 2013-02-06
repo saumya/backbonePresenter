@@ -10,7 +10,8 @@ function(){
 	var SlideView = Backbone.View.extend({
 		el: $('#idSlides'),
 		events:{
-			'click' : 'onClick'
+			'click #btnBack' : 'onBackClick',
+			'click #btnNext' : 'onNextClick'
 		},
 		initialize: function(){
 			console.log('SlideView : initialize : ');
@@ -27,8 +28,11 @@ function(){
 			this.render();
 		},
 		//Event handlers
-		onClick: function(event){
-			console.log('SlideView : onClick : ');
+		onBackClick: function(event){
+			console.log('SlideView : onBackClick : ');
+		},
+		onNextClick: function(event){
+			console.log('SlideView : onNextClick : ');
 		}
 	});
 	return SlideView;

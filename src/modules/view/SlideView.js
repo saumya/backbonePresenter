@@ -3,8 +3,8 @@
  * 
  */
 define('modules/view/SlideView',
-['modules/model/SlideModel'],
-function(SlideModel){
+//['modules/model/SlideModel'],
+function(){
 	var templateString=$("#slide_template").html();
 	
 	var SlideView = Backbone.View.extend({

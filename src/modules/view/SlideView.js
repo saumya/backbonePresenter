@@ -22,17 +22,13 @@ function(){
 			//console.log(this.model.get('pageTitle'));
 			var t=this.model.get('pageTitle');
 			var d=this.model.get('description');
+			var s=this.model.get('subTitle');
+			//
 			var o=new Object();//NOt sure why I have to do this!!
 			o.pageTitle=t;
 			o.description=d;
-			//console.log(o.description);
-			// Compile the template using underscore
-            //var compiledTemplate = _.template( templateString , this.model );
-            //var slideModel=new SlideModel({'pageTitle':this.model.pageTitle});
-            //var t=this.model.get('pageTitle');
-            
-            //var compiledTemplate = _.template( templateString , {pageTitle : 'moe'} );
-            //var compiledTemplate = _.template( templateString , {pageTitle : t} );
+			o.subTitle=s;
+			//
             var compiledTemplate = _.template( templateString , o );
             
             // Load the compiled HTML into the Backbone "el"

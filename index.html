@@ -17,12 +17,15 @@
 		<div class="row">
 		  <div id="idLeft" class="span3 bgGrey midText">left</div>
 		  <div id="idMain" class="span9 bgGrey midText">main</div>
-		  <div id="idSlides" class="offset3 span9 bgGrey midText">
-		  	
-		  	<div>
-		  		<div class="row span9 page-header">
-		  			<h1>Title<small>Sub title</small></h1>
-		  			<span>
+		  <div id="idSlides" class="offset3 span9 bgGrey midText"></div>
+		</div>
+	</div>
+	
+	<!-- Begin : Templating -->
+	<script id="slide_template" type="text/template">
+		<div>
+			<h1>Title<small>Sub title</small></h1>
+		  			<div>
 		  				Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 		  				In nisl nisi, fringilla eu blandit non, auctor nec lectus. 
 		  				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
@@ -32,15 +35,11 @@
 		  				Integer arcu odio, bibendum quis rutrum eu, placerat et urna. Proin ut elit vulputate odio interdum iaculis. 
 		  				Donec interdum dictum augue, a eleifend dolor convallis ut. Donec eu tortor in ipsum dictum tempor. 
 		  				Aliquam iaculis vehicula lorem sit amet posuere.	
-		  			</span>	
-		  		</div>
-		  		<span>Slides by : me</span>
-		  	</div>
-		  	
-		  
-		  </div>
+		  			</div>	
+		  	<div>Slides by : me</div>
 		</div>
-	</div>
-	
+	</script>
+	<!-- End : Templating -->
+	<!-- initialise the application -->
 	<script data-main="src/appMain.js" src="assets/js/require-2.1.4.js"></script>	
 </body>

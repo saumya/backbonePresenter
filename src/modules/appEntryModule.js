@@ -1,6 +1,6 @@
 define('modules/appEntryModule',
-	['modules/collection/todosCollection'],
-	function(TodosCollection){
+	['modules/collection/SlidesCollection'],
+	function(SlidesCollection){
 		console.log('AppEntry Module');
-		var todosCollection=new TodosCollection();
+		var slidesCollection=new SlidesCollection();
 	});

@@ -7,14 +7,15 @@
  * ['modules/model/SlidesModel'],
  * function(SlidesModel){
  * 	var SlidesCollection = Backbone.Collection.extend({});
+ *  return SlidesCollection;
  * });
  * 
  */
 define('modules/collection/SlidesCollection',
-['modules/model/SlidesModel'],
-function(SlidesModel){
+['modules/model/SlideModel'],
+function(SlideModel){
 	var SlidesCollection = Backbone.Collection.extend({
-		model: SlidesModel, //localStorage: new Store('todos-backbone'),  
+		model: SlideModel, //localStorage: new Store('todos-backbone'),  
 		initialize: function(){
 			console.log('SlidesCollection : initialize : ');
 			//event handlers
@@ -24,4 +25,5 @@ function(SlidesModel){
 			console.log('SlidesCollection : onCollectionChange : ');
 		}
 	});
+	return SlidesCollection;
 });

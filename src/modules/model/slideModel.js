@@ -9,7 +9,8 @@
  * });
  * 
  */
-define('modules/model/SlideModel',function(){
+define('modules/model/SlideModel',
+function(){
 	var SlideModel = Backbone.Model.extend({
 		defaults:{
 			pageNumber: 0,
@@ -17,7 +18,7 @@ define('modules/model/SlideModel',function(){
 			punchLine: 'This is punch line',
 			description: 'Description of the page. This is simply dummy text of the typesetting industry. Lorem Ipsum.'
 		},
-		intialize:{
+		intialize:function(){
 			console.log('SlideModel : intialize : ');
 		}
 	});

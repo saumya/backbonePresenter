@@ -30,9 +30,11 @@ function(){
 		//Event handlers
 		onBackClick: function(event){
 			console.log('SlideView : onBackClick : ');
+			this.trigger('SlideView.onBack');
 		},
 		onNextClick: function(event){
 			console.log('SlideView : onNextClick : ');
+			this.trigger('SlideView.onNext');
 		}
 	});
 	return SlideView;

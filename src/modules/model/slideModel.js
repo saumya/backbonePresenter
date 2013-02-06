@@ -1,13 +1,6 @@
 /**
  * @author saumya
  * 
- * requireJS : template : define('modules/model/SlideModel',function(){});
- * Complete :
- * define('modules/model/SlideModel',function(){
- * 	var SlideModel = Backbone.Model.extend({});
- * 	return SlideModel;
- * });
- * 
  */
 define('modules/model/SlideModel',
 function(){

@@ -1,15 +1,6 @@
 /**
  * @author saumya
  * 
- * requireJS : template : define('modules/collection/SlidesCollection',['modules/model/SlidesModel'],function(){});
- * Complete :
- * define('modules/collection/SlidesCollection',
- * ['modules/model/SlidesModel'],
- * function(SlidesModel){
- * 	var SlidesCollection = Backbone.Collection.extend({});
- *  return SlidesCollection;
- * });
- * 
  */
 define('modules/collection/SlidesCollection',
 ['modules/model/SlideModel'],

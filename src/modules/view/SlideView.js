@@ -14,7 +14,7 @@ function(){
 		render: function(){
 			console.log('SlideView : render : ');
 			//this.$el.clear();
-			this.$el.append(' : Hello World');
+			//this.$el.append(' : Hello World');
 		}
 	});
 	return SlideView;

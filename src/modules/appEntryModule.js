@@ -5,5 +5,5 @@ define('modules/appEntryModule',
 		var slideModel=new SlideModel();
 		var slidesCollection=new SlidesCollection();
 		var slide=new SlideView();
-		
+		slide.setData(slideModel);
 	});

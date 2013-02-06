@@ -20,6 +20,8 @@ function(){
 			//this.$el.clear();
 			//this.$el.append(' : Hello World');
 			//console.log(this.model.get('pageTitle'));
+			//console.log(this.model.toJSON());
+			/* NOT NEEDED
 			var t=this.model.get('pageTitle');
 			var d=this.model.get('description');
 			var s=this.model.get('subTitle');
@@ -29,8 +31,9 @@ function(){
 			o.description=d;
 			o.subTitle=s;
 			//
-            var compiledTemplate = _.template( templateString , o );
-            
+            //var compiledTemplate = _.template( templateString , o );
+            */
+            var compiledTemplate = _.template( templateString , this.model.toJSON() );
             // Load the compiled HTML into the Backbone "el"
             this.$el.html( compiledTemplate );
 		},

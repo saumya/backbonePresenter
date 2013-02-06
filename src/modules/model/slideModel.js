@@ -4,13 +4,13 @@
  * requireJS : template : define('modules/model/SlideModel',function(){});
  * Complete :
  * define('modules/model/SlideModel',function(){
- * 	var SlideModel = Backbone.model.extend({});
+ * 	var SlideModel = Backbone.Model.extend({});
  * 	return SlideModel;
  * });
  * 
  */
 define('modules/model/SlideModel',function(){
-	var SlideModel = Backbone.model.extend({
+	var SlideModel = Backbone.Model.extend({
 		defaults:{
 			pageNumber: 0,
 			pageTitle: 'This is page title',

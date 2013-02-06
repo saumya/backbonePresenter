@@ -24,18 +24,8 @@
 	<!-- Begin : Templating -->
 	<script id="slide_template" type="text/template">
 		<div>
-			<h1>Title<small>Sub title</small></h1>
-		  			<div>
-		  				Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-		  				In nisl nisi, fringilla eu blandit non, auctor nec lectus. 
-		  				Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-		  				Donec pharetra, justo vitae molestie eleifend, erat nulla fringilla ipsum, vitae convallis leo ante ac erat. Nunc semper tincidunt hendrerit. 
-		  				Pellentesque dictum urna tempus urna venenatis condimentum. Suspendisse urna elit, vestibulum a faucibus non, commodo nec purus. 
-		  				Vestibulum nec euismod ante. Donec varius, justo in vehicula sodales, erat magna fermentum mi, ac varius nisl sapien vel quam. 
-		  				Integer arcu odio, bibendum quis rutrum eu, placerat et urna. Proin ut elit vulputate odio interdum iaculis. 
-		  				Donec interdum dictum augue, a eleifend dolor convallis ut. Donec eu tortor in ipsum dictum tempor. 
-		  				Aliquam iaculis vehicula lorem sit amet posuere.	
-		  			</div>	
+			<h1><% print(pageTitle); %><small>Sub title</small></h1>
+		  			<div><%= description %></div>	
 		  	<div>Slides by : me</div>
 		</div>
 	</script>

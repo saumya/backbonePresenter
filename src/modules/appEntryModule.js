@@ -6,4 +6,5 @@ define('modules/appEntryModule',
 		var slidesCollection=new SlidesCollection();
 		var slide=new SlideView();
 		slide.setData(slideModel);
+		//slide.model.set({pageTitle:'Wow title woW'});
 	});

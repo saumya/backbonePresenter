@@ -18,8 +18,8 @@ function(){
 			punchLine: 'This is punch line',
 			description: 'Description of the page. This is simply dummy text of the typesetting industry. Lorem Ipsum.'
 		},
-		intialize:function(){
-			console.log('SlideModel : intialize : ');
+		initialize:function(){
+			console.log('SlideModel : initialize : ');
 		}
 	});
 	return SlideModel;

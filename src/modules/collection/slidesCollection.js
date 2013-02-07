@@ -7,44 +7,23 @@ define('modules/collection/SlidesCollection',
 function(SlideModel){
 	var SlidesCollection = Backbone.Collection.extend({
 		model: SlideModel, //localStorage: new Store('todos-backbone'),
-		url: "/assets/data/slides.json",  
+		url: "/assets/data/slides.xml",  
 		initialize: function(){
 			console.log('SlidesCollection : initialize : ');
-			/*
-			//initialise the collection with models
-			var page1=new SlideModel({
-				pageNumber:1,
-				description:'First page'
-				});
-			var page2=new SlideModel({
-				pageNumber:2,
-				description:'Second page'
-				});
-			var page3=new SlideModel({
-				pageNumber:3,
-				description:'Third page'
-				});
-			this.add([page1,page2,page3]);
-			*/
-			/*
-			//load and parse XML
-			var onXmlLoadComplete = function(xmlData){
-				//console.log($.isXMLDoc(xData));
-				var xml=$(xmlData).find('slides');
-				//console.log(xmlData);
+			//event handlers
+			this.on('add', this.onModelAdd,this);
+			this.on('remove', this.onModelRemove,this);
+			this.on('change', this.onCollectionChange,this);
+			this.on('reset', this.onCollectionReset,this);
+		},
+		parse: function(xmlData){
+			console.log('SlidesCollection : parse : ');
+			var parsed=[];
+			//console.log($.isXMLDoc(xmlData));
+			var xml=$(xmlData).find('slides');
 				var dataJson=$.xml2json(xmlData).slide;
-				//var dataJson=$.xml2json(xml);
-				//console.log(dataJson);
-				//console.log(dataJson.slide.length);
 				//parse the model and set the data
 				_.each(dataJson,function(value, key, list){
-					
-					console.log(value.pageNumber);
-					console.log(value.pageTitle);
-					console.log(value.subTitle);
-					console.log(value.punchLine);
-					console.log(value.description);
-					
 					//create models
 					var sm=new SlideModel({
 						pageNumber: value.pageNumber,
@@ -53,21 +32,16 @@ function(SlideModel){
 						punchLine: value.punchLine,
 						description: value.description
 					});
-					this.add(sm);
-				})
-				//
-				//new ApplicationEntry();
-			};
-			$.get('assets/data/slides.xml',onXmlLoadComplete);//finally load the XML
-			
-			*/
-			//end SML parsing
-			//this.getXMLdata();
-			//event handlers
-			this.on('add', this.onModelAdd,this);
-			this.on('remove', this.onModelRemove,this);
-			this.on('change', this.onCollectionChange,this);
-			this.on('reset', this.onCollectionReset,this);
+					//this.add(sm);
+					parsed.push(sm);
+				},this);
+				return parsed;
+		},
+		fetch: function(options){
+			console.log('SlidesCollection : fetch : ');
+			options || (options = {});
+    		options.dataType="xml";
+    		Backbone.Collection.prototype.fetch.call(this, options);
 		},
 		onNewModelParsed: function(ev){
 			console.log('SlidesCollection : onNewModelParsed : ');

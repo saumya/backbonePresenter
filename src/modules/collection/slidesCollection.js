@@ -35,7 +35,7 @@ function(SlideModel){
 					//this.add(sm);
 					parsed.push(sm);
 				},this);
-				return parsed;
+			return parsed;
 		},
 		fetch: function(options){
 			console.log('SlidesCollection : fetch : ');

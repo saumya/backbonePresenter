@@ -4,16 +4,26 @@ define('modules/appEntryModule',
 		console.log('AppEntry Module : Lets do the XML parsoing dance here. Before moving on to initialize this view !! ');
 		
 		var ApplicationEntry = Backbone.View.extend({
-			initialize:function(){
+			initialize:function(dataInJsonFormat){
 				console.log('ApplicationEntry : initialize');
+				
+				this.dataJson=dataInJsonFormat;
+				//console.log(this.dataJson);
+				//console.log('ApplicationEntry : initialize');
+				//TODO: parse the data into collections
+				
+				
+				
+				
+				
 				this.pageCounter=0;
 				//collection
 				this.slidesCollection=new SlidesCollection();
 				//console.log(slidesCollection.length);
-				this.slideModel=this.slidesCollection.at(0);
+				//this.slideModel=this.slidesCollection.at(0);
 				//view
 				this.slide=new SlideView();
-				this.slide.setData(this.slideModel);
+				//this.slide.setData(this.slideModel);
 				//event listeners
 				this.slide.on('SlideView.onBack',this.onBack,this);
 				this.slide.on('SlideView.onNext',this.onNext,this);

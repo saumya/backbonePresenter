@@ -51,20 +51,10 @@ define(
 			console.log('Entry to the application Entry code : Seems to be running after application is finished initialising !!');
 			//We are not doing anything specifically here as a space for flexibility
 			//new ApplicationEntry();
-			
-			var onXmlLoadComplete = function(xmlData){
-				//console.log($.isXMLDoc(xData));
-				//var xml=$(xmlData).find('slides');
-				console.log(xmlData);
-				var dataJson=$.xml2json(xmlData);
-				console.log(dataJson);
-				console.log(dataJson.slide.length);
-				//
-				new ApplicationEntry();
-			};
-			$.get('assets/data/slides.xml',onXmlLoadComplete);
-			
-			
+			$.get('assets/data/slides.xml',function(ev){
+				var dataJson=$.xml2json(ev).slide;
+				new ApplicationEntry(dataJson);
+			});
 		});
     }
 );

@@ -13,9 +13,28 @@ body {
         text-align: center;
       }
 */
+body {
+	padding-top: 0px;
+}
 .bgGrey {
 	background-color: #CCCCCC;
 }
 .midText {
 	text-align: center;
+}
+.midHigh {
+	min-height: 400px;
+}
+.descStyle {
+	min-height: 200px;
+}
+.slideNum {
+	margin-top: 10px;
+}
+.footerNav {
+	margin-top: 50px;
+}
+
+
+.authorName {
 }

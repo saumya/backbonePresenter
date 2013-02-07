@@ -9,30 +9,39 @@
 </head>
 <body>
 	<div id="applicationContainer" class="container">
-		
-		
-		
-		
+		<!--
 		<div class="row">
 		  <div id="idNavigation" class="span12 midText">
-				<span class="label">A Backbone Application</span>
+				<span class="label">made with BackboneJS</span>
 		  </div>
 		</div>
 		<div class="row">
 		  <div id="idLeft" class="span3 bgGrey midText">left</div>
 		  <div id="idMain" class="span9 bgGrey midText">main</div>
+		  <div id="idSlides" class="offset3 span9 bgGrey midText"></div>
 		</div>
+		-->
 		
+		<div id="idSlides" class="bgGrey midText midHigh"></div>
+		<span class="label"><i class="icon-wrench"></i> BackboneJS</span>
+		<span class="label"><i class="icon-wrench"></i> Bootstrap</span>
 	</div>
 	
-	<!-- JS libs -->
-	<!--<script type="text/javascript" src="assets/js/require-2.1.4.js"></script>-->
-	<!--
-	<script type="text/javascript" src="assets/js/jquery-1.9.0.js"></script>
-	<script type="text/javascript" src="assets/js/underscore-1.4.4.js"></script>
-	<script type="text/javascript" src="assets/js/backbone-0.9.10.js"></script>
-	-->
-	<!-- Application JS files -->
-	<!-- <script type="text/javascript" src="src/appMain.js"></script> -->
+	<!-- Begin : Templating -->
+	<script id="slide_template" type="text/template">
+		<div>
+			<h1><% print(pageTitle); %><small><%= subTitle %></small></h1>
+		  	<div class="descStyle"><%= description %></div>
+		  	<div><%= punchLine %></div>
+		  	<div class="footerNav">
+				<a id="btnBack" class="btn btn-primary" href="#">Back</a>
+				<a id="btnNext" class="btn btn-primary" href="#">Next</a>
+			</div>
+			<div class="slideNum">Slide Number : <%= pageNumber %></div>	
+		  	<div class="authorName">By : Saumya</div>
+		</div>
+	</script>
+	<!-- End : Templating -->
+	<!-- initialise the application -->
 	<script data-main="src/appMain.js" src="assets/js/require-2.1.4.js"></script>	
 </body>

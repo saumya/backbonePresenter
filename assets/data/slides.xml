@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<slides>
+	<slide pageNumber='1' pageTitle='PageOne' subTitle="sub title 1" punchLine="punch it!" description="This is slide one of the presentation." />
+	<slide pageNumber='2' pageTitle='PageTwo' subTitle="sub title 2" punchLine="punch it!" description="This is slide two of the presentation." />
+	<slide pageNumber='3' pageTitle='PageThree' subTitle="sub title 3" punchLine="punch it!" description="This is slide three of the presentation." />
+	<slide pageNumber='4' pageTitle='PageFour' subTitle="sub title 4" punchLine="punch it!" description="This is slide four of the presentation." />
+	<slide pageNumber='5' pageTitle='PageFive' subTitle="sub title 5" punchLine="punch it!" description="This is slide five of the presentation." />
+</slides>

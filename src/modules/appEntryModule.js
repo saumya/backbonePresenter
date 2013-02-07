@@ -42,6 +42,8 @@ define('modules/appEntryModule',
 				//view
 				this.slide=new SlideView();
 				this.slide.setData(this.slideModel);
+				this.slide.disableBackButton();
+				this.slide.enableNextButton();
 				//event listeners
 				this.slide.on('SlideView.onBack',this.onBack,this);
 				this.slide.on('SlideView.onNext',this.onNext,this);
@@ -55,29 +57,33 @@ define('modules/appEntryModule',
 				//var model=this.slidesCollection.at(1);
 				//this.slideModel.set(model);
 				
-				if(this.pageCounter<=(this.slidesCollection.length-2))
+				if(this.pageCounter<(this.slidesCollection.length-1))
 				{
 					this.pageCounter++;
 					this.slideModel=this.slidesCollection.at(this.pageCounter);
 					this.slide.setData(this.slideModel);
-				}else{
-					console.log('Last page is reached.');
-					this.slide.enableBackButton();
-					this.slide.disableNextButton();
+					if(this.pageCounter===(this.slidesCollection.length-1))
+					{
+						console.log('this.pageCounter='+this.pageCounter);
+						this.slide.enableBackButton();
+						this.slide.disableNextButton();
+					}
 				}
 			},
 			onBack:function(event){
-				console.log('ApplicationEntry : onBack');
+				console.log('ApplicationEntry : onBack : this.pageCounter='+ this.pageCounter);
 				
-				if(this.pageCounter>=1)
+				if(this.pageCounter>0)
 				{
 					this.pageCounter--;
 					this.slideModel=this.slidesCollection.at(this.pageCounter);
 					this.slide.setData(this.slideModel);
-				}else{
-					console.log('First page is reached.');
-					this.slide.disableBackButton();
-					this.slide.enableNextButton();
+					if(this.pageCounter===0)
+					{
+						console.log('this.pageCounter='+this.pageCounter);
+						this.slide.disableBackButton();
+						this.slide.enableNextButton();
+					}
 				}
 			}
 		});

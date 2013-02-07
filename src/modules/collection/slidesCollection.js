@@ -6,7 +6,8 @@ define('modules/collection/SlidesCollection',
 ['modules/model/SlideModel'],
 function(SlideModel){
 	var SlidesCollection = Backbone.Collection.extend({
-		model: SlideModel, //localStorage: new Store('todos-backbone'),  
+		model: SlideModel, //localStorage: new Store('todos-backbone'),
+		url: "/assets/data/slides.json",  
 		initialize: function(){
 			console.log('SlidesCollection : initialize : ');
 			/*
@@ -66,6 +67,7 @@ function(SlideModel){
 			this.on('add', this.onModelAdd,this);
 			this.on('remove', this.onModelRemove,this);
 			this.on('change', this.onCollectionChange,this);
+			this.on('reset', this.onCollectionReset,this);
 		},
 		onNewModelParsed: function(ev){
 			console.log('SlidesCollection : onNewModelParsed : ');
@@ -79,6 +81,9 @@ function(SlideModel){
 		},
 		onCollectionChange: function(ev){
 			console.log('SlidesCollection : onCollectionChange : ');
+		},
+		onCollectionReset: function(ev){
+			console.log('SlidesCollection : onCollectionReset : ');
 		}
 	});
 	return SlidesCollection;

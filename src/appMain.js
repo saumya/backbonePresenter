@@ -50,11 +50,13 @@ define(
        	require(['modules/dirtyModule','modules/appEntryModule'],function(DirtyModule,ApplicationEntry){
 			console.log('Entry to the application Entry code : Seems to be running after application is finished initialising !!');
 			//We are not doing anything specifically here as a space for flexibility
-			//new ApplicationEntry();
+			new ApplicationEntry();
+			/*
 			$.get('assets/data/slides.xml',function(ev){
 				var dataJson=$.xml2json(ev).slide;
 				new ApplicationEntry(dataJson);
 			});
+			*/
 		});
     }
 );

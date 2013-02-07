@@ -6,24 +6,48 @@ define('modules/appEntryModule',
 		var ApplicationEntry = Backbone.View.extend({
 			initialize:function(dataInJsonFormat){
 				console.log('ApplicationEntry : initialize');
+				//initialise properties
+				this.pageCounter=0;
+				//collection
+				this.slidesCollection=new SlidesCollection();
+				
 				
 				this.dataJson=dataInJsonFormat;
 				//console.log(this.dataJson);
 				//console.log('ApplicationEntry : initialize');
 				//TODO: parse the data into collections
 				
+				//reseting the collection
+				this.slidesCollection.reset();
+				//parse the model and set the data
+				_.each(this.dataJson,function(value, key, list){
+					/*
+					console.log(value.pageNumber);
+					console.log(value.pageTitle);
+					console.log(value.subTitle);
+					console.log(value.punchLine);
+					console.log(value.description);
+					*/
+					//create models
+					var sm=new SlideModel({
+						pageNumber: value.pageNumber,
+						pageTitle: value.pageTitle,
+						subTitle: value.subTitle,
+						punchLine: value.punchLine,
+						description: value.description
+					});
+					//console.log(this.pageCounter);
+					this.slidesCollection.add(sm);
+				},this);
 				
 				
 				
 				
-				this.pageCounter=0;
-				//collection
-				this.slidesCollection=new SlidesCollection();
-				//console.log(slidesCollection.length);
-				//this.slideModel=this.slidesCollection.at(0);
+				//console.log(this.slidesCollection.length);
+				this.slideModel=this.slidesCollection.at(0);
 				//view
 				this.slide=new SlideView();
-				//this.slide.setData(this.slideModel);
+				this.slide.setData(this.slideModel);
 				//event listeners
 				this.slide.on('SlideView.onBack',this.onBack,this);
 				this.slide.on('SlideView.onNext',this.onNext,this);

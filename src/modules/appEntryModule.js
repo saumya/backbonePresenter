@@ -10,13 +10,11 @@ define('modules/appEntryModule',
 				this.pageCounter=0;
 				//collection
 				this.slidesCollection=new SlidesCollection();
-				
-				
+				//initialise the data
 				this.dataJson=dataInJsonFormat;
 				//console.log(this.dataJson);
 				//console.log('ApplicationEntry : initialize');
-				//TODO: parse the data into collections
-				
+				//parse the data into collections
 				//reseting the collection
 				this.slidesCollection.reset();
 				//parse the model and set the data
@@ -39,10 +37,6 @@ define('modules/appEntryModule',
 					//console.log(this.pageCounter);
 					this.slidesCollection.add(sm);
 				},this);
-				
-				
-				
-				
 				//console.log(this.slidesCollection.length);
 				this.slideModel=this.slidesCollection.at(0);
 				//view
@@ -68,6 +62,8 @@ define('modules/appEntryModule',
 					this.slide.setData(this.slideModel);
 				}else{
 					console.log('Last page is reached.');
+					this.slide.enableBackButton();
+					this.slide.disableNextButton();
 				}
 			},
 			onBack:function(event){
@@ -80,6 +76,8 @@ define('modules/appEntryModule',
 					this.slide.setData(this.slideModel);
 				}else{
 					console.log('First page is reached.');
+					this.slide.disableBackButton();
+					this.slide.enableNextButton();
 				}
 			}
 		});

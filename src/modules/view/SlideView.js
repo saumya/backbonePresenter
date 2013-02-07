@@ -27,6 +27,22 @@ function(){
 			this.model=data;
 			this.render();
 		},
+		disableBackButton:function(){
+			console.log('SlideView : disableBackButton : ');
+			$("#btnBack").hide();
+		},
+		enableBackButton: function(){
+			console.log('SlideView : enableBackButton : ');
+			$("#btnBack").show();
+		},
+		disableNextButton: function(){
+			console.log('SlideView : disableNextButton : ');
+			$("#btnNext").hide();
+		},
+		enableNextButton: function(){
+			console.log('SlideView : enableNextButton : ');
+			$("#btnNext").show();
+		},
 		//Event handlers
 		onBackClick: function(event){
 			console.log('SlideView : onBackClick : ');

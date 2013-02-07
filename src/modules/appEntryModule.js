@@ -3,20 +3,6 @@ define('modules/appEntryModule',
 	function(SlidesCollection,SlideModel,SlideView){
 		console.log('AppEntry Module : Lets do the XML parsoing dance here. Before moving on to initialize this view !! ');
 		
-		var onXmlLoadComplete = function(xmlData){
-			//console.log($.isXMLDoc(xData));
-			//var xml=$(xmlData).find('slides');
-			console.log(xmlData);
-			var dataJson=$.xml2json(xmlData);
-			console.log(dataJson);
-			console.log(dataJson.slide.length);
-			//var jsonX=$.parseJSON(x);
-			//console.log(jsonX);
-			//console.log($(xData).find('slides'));
-		};
-		$.get('assets/data/slides.xml',onXmlLoadComplete);
-		
-		
 		var ApplicationEntry = Backbone.View.extend({
 			initialize:function(){
 				console.log('ApplicationEntry : initialize');
